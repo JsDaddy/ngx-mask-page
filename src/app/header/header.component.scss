@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+   flex-direction: row;
+   background-color: whitesmoke;
+}
+mat-toolbar-row {
+    justify-content: center;
+}
+a{
+   text-decoration: none; 
+   color: black;
+}
+.logo{
+    width: 75px;
+    height: 35px; 
+}
+.components {
+    font-size: 16px;
+}
+.github {
+    font-size: 16px;
+}
