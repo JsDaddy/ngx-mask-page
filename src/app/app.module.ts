@@ -1,14 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
+import { MainModule } from './main/main.module';
+import { HeaderComponent } from './header/header.component';
 
-
-import {HeaderComponent} from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +18,7 @@ import {HeaderComponent} from './header/header.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    MatToolbarModule,
-    MatIconModule
+    MainModule
   ],
   bootstrap: [AppComponent]
 })
