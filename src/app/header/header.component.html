@@ -1,22 +1,27 @@
 <mat-toolbar class="header">
 
     <mat-toolbar-row>
-      <span class="logo align-middle">
-        <a target="_blank" href="http://jsdaddy.io/"><img src="assets/img/logo.png" alt="jsdaddy" class="logo"></a>
-      </span>
+        <span class="logo align-middle">
+            <img src="assets/img/logo.png" alt="jsdaddy" class="logo">
+        </span>
     </mat-toolbar-row>
 
     <mat-toolbar-row>
-      <span class="components">
-       <a class="component-mask" href="">Components</a> </span>
+        <span>
+            <a mat-button [routerLink]='[""]'>Components</a>
+        </span>
     </mat-toolbar-row>
 
-    <!-- <mat-toolbar-row>
-      <span class="github">
-        <a class="git-link" target="_blank" href="https://github.com/JsDaddy/ngx-mask">
-          <img src="assets/img/github.png" alt="github">
-        </a>GitHub
-      </span>
-    </mat-toolbar-row> -->
+    <mat-toolbar-row>
+        <span>
+            <a mat-button [routerLink]='[""]'>Masks</a>
+        </span>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row>
+        <span>
+            <a mat-button target="_blank" href="https://github.com/JsDaddy/ngx-mask"> GitHub </a>
+        </span>
+    </mat-toolbar-row>
 
 </mat-toolbar>

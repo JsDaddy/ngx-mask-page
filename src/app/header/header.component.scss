@@ -4,7 +4,9 @@
    background-color: whitesmoke;
 }
 mat-toolbar-row {
-    justify-content: center;
+    justify-content: flex-start;
+    width: 5%;
+    padding: 0 56px;
 }
 a{
    text-decoration: none; 
@@ -13,10 +15,4 @@ a{
 .logo{
     width: 75px;
     height: 35px; 
-}
-.components {
-    font-size: 16px;
-}
-.github {
-    font-size: 16px;
 }
