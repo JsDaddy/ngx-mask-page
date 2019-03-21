@@ -5,10 +5,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../material.module';
 import { OptionsComponent } from './doc/options/options.component';
 import { HighlightModule } from 'ngx-highlightjs';
+import {NgxMaskModule} from 'ngx-mask'
 
 import typescript from 'highlight.js/lib/languages/typescript';
 import xml from 'highlight.js/lib/languages/xml';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'main', component: OptionsComponent },
@@ -31,7 +33,10 @@ function hljsLanguages(): any {
     MaterialModule,
     HighlightModule.forRoot({
       languages: hljsLanguages
-    })
+    }),
+    NgxMaskModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class MainModule { }

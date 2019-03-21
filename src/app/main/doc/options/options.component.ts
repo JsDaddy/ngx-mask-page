@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-options',
@@ -7,7 +8,19 @@ import { Component } from '@angular/core';
 })
 export class OptionsComponent {
 
-  public color: string = 'primary';
+  public prefixForm: FormControl;
+  public sufixForm: FormControl;
+  public dropForm: FormControl;
+  public showForm: FormControl;
+  public clearForm: FormControl;
+  public validForm: FormControl;
+
+  public prefixModel: string = '';
+  public sufixModel: string = '';
+  public dropModel: string = '';
+  public showModel: string = '';
+  public clearModel: string = '';
+  public validModel: string = '';
 
   // tslint:disable-next-line: no-any
   public tiles: any[] = [
@@ -42,4 +55,13 @@ export class OptionsComponent {
       code: ` <input type='text' mask="00 00" [validation]="true">`
     }
   ];
+
+  public constructor() {
+    this.prefixForm = new FormControl('');
+    this.sufixForm = new FormControl('');
+    this.dropForm = new FormControl('');
+    this.showForm = new FormControl('');
+    this.clearForm = new FormControl('');
+    this.validForm = new FormControl('');
+  }
 }
