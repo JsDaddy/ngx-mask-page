@@ -1,49 +1,53 @@
 <section class="content">
 
-  <!-- <mat-tab-group> -->
-    <!-- <mat-tab label="Docs"> -->
-      <mat-grid-list cols="2" rowHeight="200px">
-        <mat-grid-tile *ngFor="let tile of docs">
-          <mat-card>
-            <mat-card-header>
-              <mat-card-title>{{tile.header}}</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-              <p>{{tile.text}}</p>
-              <p>Usage</p>
-              <pre><code [highlight]="tile.code"></code></pre>
-            </mat-card-content>
-          </mat-card>
-        </mat-grid-tile>
-      <!-- </mat-grid-list> -->
-    <!-- </mat-tab> -->
+  <mat-grid-list cols="2" rowHeight="200px">
+    <mat-grid-tile *ngFor="let tile of docs">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{tile.header}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{tile.text}}</p>
+          <p>Usage</p>
+          <pre><code [highlight]="tile.code"></code></pre>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
 
-    <!-- <mat-tab label="Examples"> -->
-      <div class="examples-container">
-        <div class="examples-wrapper">
-          <div class="example" *ngFor="let ex of examples">
-            <mat-card>
-              <mat-card-content>
-                <div class="input-wrap">
-                  <mat-form-field>
-                    <input matInput placeholder="{{ex._placeholder}}" prefix="ex._prefix || ''" mask="{{ex._mask}}" [formControl]="ex.control.form"
-                      [(ngModel)]="ex.control.model">
-                  </mat-form-field>
+  <div class="examples-container">
+    <div class="examples-wrapper">
+      <div class="example" *ngFor="let ex of examples">
+        <mat-card>
+          <mat-card-content>
+            <div class="input-wrap">
+              <mat-form-field>
+                <input matInput placeholder="{{ex._placeholder}}" prefix="{{ex._prefix}}" sufix="{{ex._suffix}}"
+                  [dropSpecialCharacters]="ex._dropSpecialCharacters || ''" mask="{{ex._mask}}"
+                  [formControl]="ex.control.form" [(ngModel)]="ex.control.model" [validation]="ex._validation || ''"
+                  [showMaskTyped]="ex._showMaskTyped || ''" [clearIfNotMatch]="ex._clearIfNotMatch || ''">
+              </mat-form-field>
+            </div>
+            <div *ngIf="!ex._validation; else validView">
+              <div class="model-wrap">
+                <div class="values">
+                  <p>FormControl: {{ ex.control.form.value ? ex.control.form.value : 'Empty' }}</p>
+                  <p>NgModel: {{ ex.control.model ? ex.control.model: 'Empty' }}</p>
                 </div>
-                <div class="model-wrap">
-                  <div class="values">
-                    <p>FormControl: {{ ex.control.form.value ? ex.control.form.value : 'Empty' }}</p>
-                    <p>NgModel: {{ ex.control.model ? ex.control.model: 'Empty' }}</p>
-                  </div>
-                  <mat-hint>Mask: {{ex._mask}}</mat-hint>
+                <mat-hint>Mask: {{ex._mask}}</mat-hint>
+              </div>
+            </div>
+            <ng-template #validView>
+              <div class="model-wrap">
+                <div class="values">
+                  <p>FormControl: {{ ex.control.form.errors | json }}</p>
                 </div>
-              </mat-card-content>
-            </mat-card>
-          </div>
-        </div>
+                <mat-hint>Mask: {{ex._mask}}</mat-hint>
+              </div>
+            </ng-template>
+          </mat-card-content>
+        </mat-card>
       </div>
-    <!-- </mat-tab> -->
-
-  <!-- </mat-tab-group> -->
-
+    </div>
+  </div>
 </section>
