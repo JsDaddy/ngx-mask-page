@@ -8,19 +8,24 @@ import { FormControl } from '@angular/forms';
 })
 export class OptionsComponent {
 
-  public prefixForm: FormControl;
-  public sufixForm: FormControl;
+  // public prefixForm: FormControl;
+  public suffixForm: FormControl;
   public dropForm: FormControl;
   public showForm: FormControl;
   public clearForm: FormControl;
   public validForm: FormControl;
 
   public prefixModel: string = '';
-  public sufixModel: string = '';
+  public suffixModel: string = '';
   public dropModel: string = '';
   public showModel: string = '';
   public clearModel: string = '';
   public validModel: string = '';
+
+  // tslint:disable-next-line:no-any
+  public control: any = {form: new FormControl(''), model: ''};
+  public maska: string = '(00) 000 000';
+  public a: boolean = true;
 
   // tslint:disable-next-line: no-any
   public tiles: any[] = [
@@ -30,9 +35,9 @@ export class OptionsComponent {
       code: `<input type='text' prefix="+7 " mask="(000) 000 00 00" >`
     },
     {
-      header: 'Sufix (string)',
-      text: 'You can add sufix to you masked value',
-      code: `<input type='text' sufix=" $" mask="0000" >`
+      header: 'Suffix (string)',
+      text: 'You can add suffix to you masked value',
+      code: `<input type='text' suffix=" $" mask="0000" >`
     },
     {
       header: 'dropSpecialCharacters (boolean)',
@@ -57,8 +62,8 @@ export class OptionsComponent {
   ];
 
   public constructor() {
-    this.prefixForm = new FormControl('');
-    this.sufixForm = new FormControl('');
+    // this.prefixForm = new FormControl('');
+    this.suffixForm = new FormControl('');
     this.dropForm = new FormControl('');
     this.showForm = new FormControl('');
     this.clearForm = new FormControl('');
