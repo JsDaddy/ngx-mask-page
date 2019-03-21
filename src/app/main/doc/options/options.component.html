@@ -1,9 +1,9 @@
 <section class="content">
 
-  <mat-tab-group>
-    <mat-tab label="Docs">
+  <!-- <mat-tab-group> -->
+    <!-- <mat-tab label="Docs"> -->
       <mat-grid-list cols="2" rowHeight="200px">
-        <mat-grid-tile *ngFor="let tile of tiles">
+        <mat-grid-tile *ngFor="let tile of docs">
           <mat-card>
             <mat-card-header>
               <mat-card-title>{{tile.header}}</mat-card-title>
@@ -15,135 +15,35 @@
             </mat-card-content>
           </mat-card>
         </mat-grid-tile>
-      </mat-grid-list>
-    </mat-tab>
+      <!-- </mat-grid-list> -->
+    <!-- </mat-tab> -->
 
-    <mat-tab label="Examples">
+    <!-- <mat-tab label="Examples"> -->
       <div class="examples-container">
         <div class="examples-wrapper">
-          <div class="example">
+          <div class="example" *ngFor="let ex of examples">
             <mat-card>
               <mat-card-content>
                 <div class="input-wrap">
                   <mat-form-field>
-                    <input matInput placeholder="Prefix" prefix="+75" mask="{{maska}}" [formControl]="control.form"
-                      [(ngModel)]="control.model">
-                      
+                    <input matInput placeholder="{{ex._placeholder}}" prefix="ex._prefix || ''" mask="{{ex._mask}}" [formControl]="ex.control.form"
+                      [(ngModel)]="ex.control.model">
                   </mat-form-field>
                 </div>
                 <div class="model-wrap">
                   <div class="values">
-                    <p>FormControl: {{ control.form.value ? control.form.value : 'Empty' }}</p>
-                    <p>NgModel: {{ control.model ? control.model: 'Empty' }}</p>
+                    <p>FormControl: {{ ex.control.form.value ? ex.control.form.value : 'Empty' }}</p>
+                    <p>NgModel: {{ ex.control.model ? ex.control.model: 'Empty' }}</p>
                   </div>
-                  <mat-hint>Mask: (00) 000 000</mat-hint>
-                </div>
-              </mat-card-content>
-            </mat-card>
-          </div>
-
-          <div class="example">
-            <mat-card>
-              <mat-card-content>
-                <div class="input-wrap">
-                  <mat-form-field>
-                    <input matInput placeholder="Suffix" suffix=" $" mask="000 00" [formControl]="suffixForm"
-                      [(ngModel)]="suffixModel">
-                  </mat-form-field>
-                </div>
-                <div class="model-wrap">
-                  <div class="values">
-                    <p>FormControl: {{ suffixForm.value ? suffixForm.value: 'Empty' }}</p>
-                    <p>NgModel: {{ suffixModel ? suffixModel: 'Empty' }}</p>
-                  </div>
-                  <mat-hint>Mask: 000 00</mat-hint>
-                </div>
-              </mat-card-content>
-            </mat-card>
-          </div>
-
-          <div class="example">
-            <mat-card>
-              <mat-card-content>
-                <div class="input-wrap">
-                  <mat-form-field>
-                    <input matInput placeholder="dropSpecialCharacters" [dropSpecialCharacters]="false"
-                      mask="000-000.00" [formControl]="dropForm" [(ngModel)]="dropModel">
-                  </mat-form-field>
-                </div>
-                <div class="model-wrap">
-                  <div class="values">
-                    <p>FormControl: {{ dropForm.value ? dropForm.value: 'Empty' }}</p>
-                    <p>NgModel: {{ dropModel ? dropModel: 'Empty' }}</p>
-                  </div>
-                  <mat-hint>Mask: 000-000.00</mat-hint>
-                </div>
-              </mat-card-content>
-            </mat-card>
-          </div>
-
-          <div class="example">
-            <mat-card>
-              <mat-card-content>
-                <div class="input-wrap">
-                  <mat-form-field>
-                    <input matInput placeholder="showMaskTyped" [showMaskTyped]=" " mask="(000) 000-0000"
-                      [formControl]="showForm" [(ngModel)]="showModel">
-                  </mat-form-field>
-                </div>
-                <div class="model-wrap">
-                  <div class="values">
-                    <p>FormControl: {{ showForm.value ? showForm.value: 'Empty' }}</p>
-                    <p>NgModel: {{ showModel ? showModel: 'Empty' }}</p>
-                  </div>
-                  <mat-hint>Mask: (000) 000-0000</mat-hint>
-                </div>
-              </mat-card-content>
-            </mat-card>
-          </div>
-
-          <div class="example">
-            <mat-card>
-              <mat-card-content>
-                <div class="input-wrap">
-                  <mat-form-field>
-                    <input matInput placeholder="clearIfNotMatch" [clearIfNotMatch]="true" mask="000-000.00"
-                      [formControl]="clearForm" [(ngModel)]="clearModel">
-                  </mat-form-field>
-                </div>
-                <div class="model-wrap">
-                  <div class="values">
-                    <p>FormControl: {{ clearForm.value ? clearForm.value: 'Empty' }}</p>
-                    <p>NgModel: {{ clearModel ? clearModel: 'Empty' }}</p>
-                  </div>
-                  <mat-hint>Mask: 000-000.00</mat-hint>
-                </div>
-              </mat-card-content>
-            </mat-card>
-          </div>
-
-          <div class="example">
-            <mat-card>
-              <mat-card-content>
-                <div class="input-wrap">
-                  <mat-form-field>
-                    <input matInput placeholder="validation" mask="00-00.00" [validation]="true"
-                      [formControl]="validForm">
-                  </mat-form-field>
-                </div>
-                <div class="model-wrap">
-                  <div class="values">
-                    <p>FormControl: {{ validForm.errors | json}}</p>
-                  </div>
-                  <mat-hint>Mask: 00-00.00</mat-hint>
+                  <mat-hint>Mask: {{ex._mask}}</mat-hint>
                 </div>
               </mat-card-content>
             </mat-card>
           </div>
         </div>
       </div>
-    </mat-tab>
+    <!-- </mat-tab> -->
 
-  </mat-tab-group>
+  <!-- </mat-tab-group> -->
 
 </section>
