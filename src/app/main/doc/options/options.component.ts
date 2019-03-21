@@ -8,27 +8,8 @@ import { FormControl } from '@angular/forms';
 })
 export class OptionsComponent {
 
-  // public prefixForm: FormControl;
-  public suffixForm: FormControl;
-  public dropForm: FormControl;
-  public showForm: FormControl;
-  public clearForm: FormControl;
-  public validForm: FormControl;
-
-  public prefixModel: string = '';
-  public suffixModel: string = '';
-  public dropModel: string = '';
-  public showModel: string = '';
-  public clearModel: string = '';
-  public validModel: string = '';
-
-  // tslint:disable-next-line:no-any
-  public control: any = {form: new FormControl(''), model: ''};
-  public maska: string = '(00) 000 000';
-  public a: boolean = true;
-
   // tslint:disable-next-line: no-any
-  public tiles: any[] = [
+  public docs: any[] = [
     {
       header: 'Prefix (string)',
       text: 'You can add prefix to you masked value',
@@ -61,12 +42,44 @@ export class OptionsComponent {
     }
   ];
 
-  public constructor() {
-    // this.prefixForm = new FormControl('');
-    this.suffixForm = new FormControl('');
-    this.dropForm = new FormControl('');
-    this.showForm = new FormControl('');
-    this.clearForm = new FormControl('');
-    this.validForm = new FormControl('');
-  }
+  // tslint:disable-next-line: no-any
+  public examples: any[] = [
+    {
+      _placeholder: 'prefix',
+      _prefix: '+75',
+      _mask: '(00) 000 000',
+      control: { form: new FormControl(''), model: '' }
+    },
+    {
+      _placeholder: 'suffix',
+      _suffix: ' $',
+      _mask: '0 000',
+      control: { form: new FormControl(''), model: '' }
+    },
+    {
+      _placeholder: 'dropSpecialCharacters',
+      _dropSpecialCharacters: false,
+      _mask: '000-000.00',
+      control: { form: new FormControl(''), model: '' }
+    },
+    {
+      _placeholder: 'showMaskTyped',
+      _showMaskTyped: true,
+      _mask: '(000) 000-0000',
+      control: { form: new FormControl(''), model: '' }
+    },
+    {
+      _placeholder: 'clearIfNotMatch',
+      _clearIfNotMatch: true,
+      _mask: '000-000.00',
+      control: { form: new FormControl(''), model: '' }
+    },
+    {
+      _placeholder: 'validation',
+      _validation: true,
+      _mask: '000-000.00',
+      control: { form: new FormControl(''), model: '' }
+    },
+  ];
+
 }
