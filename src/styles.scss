@@ -4,3 +4,12 @@ body {
     padding: 0;
 }
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~highlight.js/styles/color-brewer.css';
+
+code {
+    background: #f7f7f7 !important;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #fc0 !important
+}
