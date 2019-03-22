@@ -1,5 +1,5 @@
 <section class="mask-wrap">
-  
+
   <mat-drawer-container class="mat-elevation-z6">
     <mat-accordion>
       <mat-expansion-panel *ngFor="let list of lists">
@@ -8,12 +8,13 @@
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-nav-list *ngFor="let item of list.text">
-          <button mat-button class="date">{{item.content}}</button>
+          <button mat-button [ngStyle]="{'color': item.id === chosenItem ? '#ffcc00' : 'black'}" class="date"
+            id="{{item.id}}" (click)="handleClick(item.id)">{{item.content}}</button>
         </mat-nav-list>
       </mat-expansion-panel>
     </mat-accordion>
   </mat-drawer-container>
 
-  <app-options [docs]="docs" [examples]="examples"></app-options>
+  <app-options [choose]="chosenItem" [docs]="inputVal.docs" [examples]="inputVal.examples"></app-options>
 
 </section>

@@ -10,5 +10,10 @@ export class OptionsComponent {
   // tslint:disable
   @Input('docs') public docs: any[];
   @Input('examples') public examples: any[];
+  @Input('choose') public choose: string;
+
+  public checkChoose(input: string, curr: string): boolean {
+    return input === curr ? true : false;
+  }
 
 }
