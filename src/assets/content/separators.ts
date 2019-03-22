@@ -30,7 +30,8 @@ export const SepDocs: any[] = [
         header: 'Comma separator',
         text: `For separate input with commas`,
         code: `  <input type='text' mask="comma_separator">`,
-        id: '3'
+        id: '3',
+        anchor: 'comma_sep'
     },
     {
         header: 'Comma separator',

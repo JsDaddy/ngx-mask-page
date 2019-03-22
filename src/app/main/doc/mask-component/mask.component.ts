@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { OptDocs, OptExamples } from 'src/assets/content/optional';
 import { lists } from 'src/assets/content/lists';
 import { SepDocs, SepExamples } from 'src/assets/content/separators';
+import { ComDocs, ComExamples } from 'src/assets/content/commonCases';
+import { OthDocs, OthExamples } from 'src/assets/content/other';
 
 @Component({
     selector: 'app-mask',
@@ -20,12 +22,20 @@ export class MaskComponent implements OnInit {
     public switchDoc(idList: string): void {
         switch (idList) {
             case '1':
+                this.inputVal.docs = ComDocs;
+                this.inputVal.examples = ComExamples;
+                break;
+            case '2':
                 this.inputVal.docs = OptDocs;
                 this.inputVal.examples = OptExamples;
                 break;
-            case '2':
+            case '3':
                 this.inputVal.docs = SepDocs;
                 this.inputVal.examples = SepExamples;
+                break;
+            case '4':
+                this.inputVal.docs = OthDocs;
+                this.inputVal.examples = OthExamples;
                 break;
             default:
                 break;
@@ -35,12 +45,11 @@ export class MaskComponent implements OnInit {
 
     public handleClick(idItem: string, scrollTo: string): void {
         this.chosenItem = idItem;
-        if (Number(idItem) > 3) {
+        if (Number(idItem) >= 3) {
             setTimeout(() => {
                 // tslint:disable-next-line:no-any
                 const anchor: any = document.getElementById(scrollTo);
                 if (anchor) {
-                    // anchor.focus();
                     anchor.scrollIntoView({ behavior: 'smooth' });
                 }
             });
@@ -50,8 +59,8 @@ export class MaskComponent implements OnInit {
 
     public ngOnInit(): void {
         this.inputVal = {
-            docs: [],
-            examples: []
+            docs: ComDocs,
+            examples: ComExamples
         };
         this.chosenItem = '';
         this.lists = lists;
