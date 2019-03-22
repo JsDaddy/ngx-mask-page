@@ -13,7 +13,18 @@ export class OptionsComponent {
   @Input('choose') public choose: string;
 
   public checkChoose(input: string, curr: string): boolean {
-    return input === curr ? true : false;
+    if (input === curr) {
+      setTimeout(() => {
+        const anchor = document.getElementById(curr);
+        if (anchor) {
+          // anchor.focus();
+          anchor.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+      return true
+    }
+    return false
   }
+
 
 }

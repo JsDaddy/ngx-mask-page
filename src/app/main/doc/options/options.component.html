@@ -2,19 +2,21 @@
 
   <div class="doc-container">
     <div class="doc" *ngFor="let tile of docs">
-      <mat-card>
+      <mat-card id="{{tile.id}}">
         <mat-card-header>
           <mat-card-title [ngStyle]="{'color': checkChoose(choose, tile.id) ? '#ffcc00' : 'black' }">{{tile.header}}
           </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <p>{{tile.text}}</p>
+          <p>  <a [routerLink] fragment="some-id" (click)="scrollIntoView('some-id')">Jump</a>{{tile.text}}</p>
           <p>Usage</p>
           <pre><code [highlight]="tile.code"></code></pre>
         </mat-card-content>
       </mat-card>
     </div>
   </div>
+
+
 
   <div class="examples-container">
     <div class="examples-wrapper">
@@ -52,3 +54,5 @@
     </div>
   </div>
 </section>
+
+<a id="some-id" tabindex="-1"></a>
