@@ -9,7 +9,6 @@ import { lists } from 'src/assets/content/lists';
 })
 export class MaskComponent implements OnInit {
 
-
     // tslint:disable-next-line: no-any
     public inputVal: any;
     public chosenItem: string;
