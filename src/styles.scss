@@ -3,4 +3,59 @@ body {
     margin: 0;
     padding: 0;
 }
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~highlight.js/styles/color-brewer.css';
+
+code {
+    background: #f7f7f7 !important;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #fc0 !important
+}
+
+@import "~@angular/material/theming";
+@import "assets/style/variables";
+// @import "assets/styles/loader";
+@include mat-core();
+$candy-app-primary: mat-palette($mat-cyan);
+$candy-app-accent: mat-palette($mat-pink, A200, A100, A400);
+$candy-app-warn: mat-palette($mat-red);
+$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+@include angular-material-theme($candy-app-theme);
+
+@mixin ngmask-input-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $input-placeholder-color: mat-color($foreground, secondary-text);
+  mat-input-container {
+    mat-hint {
+      color: $input-placeholder-color;
+    }
+  }
+}
+@include ngmask-input-theme($candy-app-theme);
+mat-card {
+  mat-card-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://fonts.gstatic.com/s/materialicons/v22/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
+}
+
+.mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: #fc0 !important
+   }
+.mat-form-field-underline {
+    /*change color of underline*/
+    background-color:  #fc0 !important
+  } 
+.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color:  #fc0 !important
+  }
