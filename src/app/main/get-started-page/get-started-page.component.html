@@ -1,0 +1,23 @@
+<div class="install">
+    <div class="instal-wrapper">
+        <p class=".mat-subheading-1">For existing apps, follow these steps to begin using Angular Mask Plugin.</p>
+        <div class="" *ngFor="let quick of quickStart">
+            <h2>{{quick.header}}</h2>
+            <p class=".mat-subheading-1">{{quick.text}}</p>
+            <code>{{quick.code}}</code>
+
+        </div>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z6" >
+                <ng-container matColumnDef="mask" sticky>
+                    <th mat-header-cell *matHeaderCellDef>mask</th>
+                    <td mat-cell *matCellDef="let element ">{{element.mask}}</td>
+                </ng-container>
+                <ng-container matColumnDef="example" >
+                    <th mat-header-cell *matHeaderCellDef>example</th>
+                    <td mat-cell *matCellDef="let element">{{element.example}}</td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+    </div>
+</div>
