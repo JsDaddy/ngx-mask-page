@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OptDocs, OptExamples } from 'src/assets/content/optional';
 import { lists } from 'src/assets/content/lists';
+import { SepDocs, SepExamples } from 'src/assets/content/separators';
 
 @Component({
     selector: 'app-mask',
@@ -21,6 +22,11 @@ export class MaskComponent implements OnInit {
             case '1':
                 this.inputVal.docs = OptDocs;
                 this.inputVal.examples = OptExamples;
+                break;
+            case '2':
+                this.inputVal.docs = SepDocs;
+                this.inputVal.examples = SepExamples;
+                break;
             default:
                 break;
         }

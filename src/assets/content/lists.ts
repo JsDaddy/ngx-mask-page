@@ -30,4 +30,22 @@ export const lists: any[] = [
             },
         ],
     },
+    {
+        header: 'Separators',
+        id: '2',
+        text: [
+            {
+                content: 'Separator',
+                id: '1'
+            },
+            {
+                content: 'Dot separator',
+                id: '2'
+            },
+            {
+                content: 'Comma separator',
+                id: '3'
+            }
+        ],
+    },
 ];
