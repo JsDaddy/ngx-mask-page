@@ -4,19 +4,21 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../material.module';
 import { HighlightModule } from 'ngx-highlightjs';
-import { NgxMaskModule } from 'ngx-mask'
+import { NgxMaskModule } from 'ngx-mask';
 import { MaskComponent } from './doc/mask-component/mask.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { GetStartedPageComponent } from './get-started-page/get-started-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import typescript from 'highlight.js/lib/languages/typescript';
 import xml from 'highlight.js/lib/languages/xml';
 
 
 const routes: Routes = [
-  { path: 'main', component: OptionsComponent },
-  { path: 'mask-component', component: MaskComponent }
+  { path: 'main', component: MainPageComponent },
+  { path: 'mask-component', component: MaskComponent },
+  { path: 'getting-start', component: GetStartedPageComponent}
 ];
 
 
@@ -28,7 +30,7 @@ function hljsLanguages(): any {
   ];
 }
 @NgModule({
-  declarations: [MainPageComponent, OptionsComponent, MaskComponent],
+  declarations: [MainPageComponent, GetStartedPageComponent, MaskComponent, OptionsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -39,6 +41,7 @@ function hljsLanguages(): any {
     NgxMaskModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class MainModule { }
