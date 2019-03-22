@@ -1,8 +1,42 @@
 // tslint:disable-next-line: no-any
 export const lists: any[] = [
     {
-        header: 'Options',
+        header: 'Common cases',
         id: '1',
+        text: [
+            {
+                content: 'Date',
+                id: '1',
+            },
+            {
+                content: 'Date and hour',
+                id: '2',
+            },
+            {
+                content: 'Hour',
+                id: '3',
+                scrollTo: 'hour'
+            },
+            {
+                content: 'Valid 24 hour format',
+                id: '4',
+                scrollTo: 'valid24'
+            },
+            {
+                content: 'Mixed types',
+                id: '5',
+                scrollTo: 'mixed'
+            },
+            {
+                content: 'Valid date and month',
+                id: '6',
+                scrollTo: 'validdate'
+            },
+        ],
+    },
+    {
+        header: 'Options',
+        id: '2',
         text: [
             {
                 content: 'Prefix',
@@ -33,6 +67,43 @@ export const lists: any[] = [
                 content: 'Validation',
                 id: '6',
                 scrollTo: 'valid'
+            },
+        ],
+    },
+    {
+        header: 'Separators',
+        id: '3',
+        text: [
+            {
+                content: 'Separator',
+                id: '1'
+            },
+            {
+                content: 'Dot separator',
+                id: '2'
+            },
+            {
+                content: 'Comma separator',
+                id: '3',
+                scrollTo: 'comma_sep'
+            }
+        ],
+    },
+    {
+        header: 'Other',
+        id: '4',
+        text: [
+            {
+                content: 'Secure input',
+                id: '1'
+            },
+            {
+                content: 'Pipe',
+                id: '2'
+            },
+            {
+                content: 'specialCharacters',
+                id: '3',
             },
         ],
     },

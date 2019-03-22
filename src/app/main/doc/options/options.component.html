@@ -7,11 +7,11 @@
           <mat-card-title [ngStyle]="{'color': checkChoose(choose, tile.id) ? '#ffcc00' : 'black' }">{{tile.header}}
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content>
-          <p>{{tile.text}}</p>
-          <p>Usage</p>
-          <pre><code [highlight]="tile.code"></code></pre>
-        </mat-card-content>
+          <mat-card-content>
+            <p>{{tile.text}}</p>
+            <p>Usage</p>
+            <pre><code [highlight]="tile.code"></code></pre>
+          </mat-card-content>
       </mat-card>
     </div>
   </div>
@@ -20,13 +20,15 @@
     <div class="examples-wrapper">
       <div class="example" *ngFor="let ex of examples">
         <mat-card>
-          <mat-card-content>
+          <mat-card-content *ngIf="!ex._pipe; else pipeView">
             <div class="input-wrap">
               <mat-form-field>
                 <input matInput placeholder="{{ex._placeholder}}" prefix="{{ex._prefix}}" sufix="{{ex._suffix}}"
-                  [dropSpecialCharacters]="ex._dropSpecialCharacters || ''" mask="{{ex._mask}}"
+                  [dropSpecialCharacters]="ex._dropSpecialCharacters || ''" mask="{{ex._mask || ''}}"
                   [formControl]="ex.control.form" [(ngModel)]="ex.control.model" [validation]="ex._validation || ''"
-                  [showMaskTyped]="ex._showMaskTyped || ''" [clearIfNotMatch]="ex._clearIfNotMatch || ''">
+                  [showMaskTyped]="ex._showMaskTyped || ''" [clearIfNotMatch]="ex._clearIfNotMatch || ''"
+                  [hiddenInput]="ex._hiddenInput || ''" [specialCharacters]="ex._specialCharacters || ''"
+                  >
               </mat-form-field>
             </div>
             <div *ngIf="!ex._validation; else validView">
@@ -53,4 +55,10 @@
   </div>
 </section>
 
-<a id="some-id" tabindex="-1"></a>
+<ng-template #pipeView>
+  <mat-card-content>
+    <p>{{phone | mask: '(000) 000-0000' }}</p>
+    <p>Mask: (000) 000-0000</p>
+    <p>Value: 123456789</p>
+  </mat-card-content>
+</ng-template>
