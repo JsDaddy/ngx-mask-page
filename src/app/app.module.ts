@@ -8,7 +8,6 @@ import { MaterialModule } from './material.module';
 import { MainModule } from './main/main.module';
 import { HeaderComponent } from './header/header.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
