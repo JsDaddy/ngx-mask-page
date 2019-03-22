@@ -7,7 +7,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
-import {MatSidenavModule} from '@angular/material/sidenav'; 
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 @NgModule({
   imports: [
     MatIconModule,
@@ -18,7 +21,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatTabsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatListModule,
+    MatExpansionModule,
+    MatCardModule
   ],
   exports: [
     MatIconModule,
@@ -29,7 +35,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatTabsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatListModule,
+    MatExpansionModule,
+    MatCardModule
   ]
 })
 export class MaterialModule { }
