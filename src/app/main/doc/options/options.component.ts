@@ -13,7 +13,9 @@ export class OptionsComponent {
   @Input('choose') public choose: string;
 
   public checkChoose(input: string, curr: string): boolean {
+    
     return input === curr ? true : false;
   }
+
 
 }

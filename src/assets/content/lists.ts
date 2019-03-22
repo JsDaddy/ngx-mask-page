@@ -6,27 +6,33 @@ export const lists: any[] = [
         text: [
             {
                 content: 'Prefix',
-                id: '1'
+                id: '1',
+                scrollTo: 'prefix'
             },
             {
                 content: 'Suffix',
-                id: '2'
+                id: '2',
+                scrollTo: 'suffix'
             },
             {
                 content: 'dropSpecialCharacters',
-                id: '3'
+                id: '3',
+                scrollTo: 'special-ch'
             },
             {
                 content: 'showMaskTyped',
-                id: '4'
+                id: '4',
+                scrollTo: 'show-mask'
             },
             {
                 content: 'clearIfNotMatch',
-                id: '5'
+                id: '5',
+                scrollTo: 'clear'
             },
             {
                 content: 'Validation',
-                id: '6'
+                id: '6',
+                scrollTo: 'valid'
             },
         ],
     },

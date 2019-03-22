@@ -9,7 +9,7 @@
         </mat-expansion-panel-header>
         <mat-nav-list *ngFor="let item of list.text">
           <button mat-button [ngStyle]="{'color': item.id === chosenItem ? '#ffcc00' : 'black'}" class="date"
-            id="{{item.id}}" (click)="handleClick(item.id)">{{item.content}}</button>
+            id="{{item.id}}" (click)="handleClick(item.id, item.scrollTo)" [routerLink] fragment="{{item.scrollTo}}">{{item.content}}</button>
         </mat-nav-list>
       </mat-expansion-panel>
     </mat-accordion>
@@ -18,3 +18,5 @@
   <app-options [choose]="chosenItem" [docs]="inputVal.docs" [examples]="inputVal.examples"></app-options>
 
 </section>
+
+<!-- <a [routerLink] fragment="some-id" (click)="scrollIntoView('some-id')">Jump</a> -->
