@@ -1,7 +1,7 @@
 <section class="content">
 
-  <mat-grid-list cols="2" rowHeight="200px">
-    <mat-grid-tile *ngFor="let tile of docs">
+  <div class="doc-container">
+    <div class="doc" *ngFor="let tile of docs">
       <mat-card>
         <mat-card-header>
           <mat-card-title>{{tile.header}}</mat-card-title>
@@ -12,8 +12,8 @@
           <pre><code [highlight]="tile.code"></code></pre>
         </mat-card-content>
       </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+    </div>
+  </div>
 
   <div class="examples-container">
     <div class="examples-wrapper">
