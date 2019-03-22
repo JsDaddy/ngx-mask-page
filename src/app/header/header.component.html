@@ -1,14 +1,10 @@
 <mat-toolbar class=" header mat-elevation-z6">
     <mat-toolbar-row>
         <span class="logo align-middle">
-            <img src="assets/img/logo.png" alt="jsdaddy" class="logo">
+            <a [routerLink]="['/main']">
+            <img src="assets/img/logo.png" alt="jsdaddy" class="logo"></a>
         </span>
     </mat-toolbar-row>
-    <mat-toolbar-row>
-            <span>
-                <a mat-button [routerLink]="['/main']">Plugin</a>
-            </span>
-        </mat-toolbar-row>
     <mat-toolbar-row>
         <span>
             <a mat-button [routerLink]="['/mask-component']">Masks</a>
