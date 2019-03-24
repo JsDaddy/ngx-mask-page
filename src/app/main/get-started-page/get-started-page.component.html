@@ -2,22 +2,50 @@
     <div class="instal-wrapper">
         <p class=".mat-subheading-1">For existing apps, follow these steps to begin using Angular Mask Plugin.</p>
         <div class="" *ngFor="let quick of quickStart">
-            <h2>{{quick.header}}</h2>
+            <h2 class="mat-h1">{{quick.header}}</h2>
             <p class=".mat-subheading-1">{{quick.text}}</p>
-            <code>{{quick.code}}</code>
-
+            <div *ngIf="quick.code">
+                <pre><code [highlight]="quick.code"></code></pre>
+            </div>
         </div>
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z6" >
+        <div class="tables">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z6">
                 <ng-container matColumnDef="mask" sticky>
                     <th mat-header-cell *matHeaderCellDef>mask</th>
-                    <td mat-cell *matCellDef="let element ">{{element.mask}}</td>
+                    <td mat-cell *matCellDef="let element"
+                        [style.background-color]="element.position % 2 == 0 ? 'whitesmoke':'white'">
+                        {{element.mask}}</td>
                 </ng-container>
                 <ng-container matColumnDef="example" stickyEnd>
                     <th mat-header-cell *matHeaderCellDef>example</th>
-                    <td mat-cell *matCellDef="let element">{{element.example}}</td>
+                    <td mat-cell *matCellDef="let element"
+                        [style.background-color]="element.position % 2 == 0 ? 'whitesmoke':'white'">{{element.example}}
+                    </td>
                 </ng-container>
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
+
+            <table mat-table [dataSource]="dataCode" class="mat-elevation-z6">
+                <ng-container matColumnDef="code" sticky>
+                    <th mat-header-cell *matHeaderCellDef>code</th>
+                    <td mat-cell *matCellDef="let element"
+                        [style.background-color]="element.position % 2 == 0 ? 'whitesmoke':'white'">
+                        {{element.mask}}</td>
+                </ng-container>
+                <ng-container matColumnDef="meaning" stickyEnd>
+                    <th mat-header-cell *matHeaderCellDef>meaning</th>
+                    <td mat-cell *matCellDef="let element"
+                        [style.background-color]="element.position % 2 == 0 ? 'whitesmoke':'white'">{{element.example}}
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayCol"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayCol;"></tr>
+            </table>
+        </div>
+
+        <a mat-raised-button [routerLink]="['/mask-component']" class="next">
+            
+            Next<mat-icon svgIcon="chevron-right-solid"></mat-icon>  </a>
     </div>
 </div>
