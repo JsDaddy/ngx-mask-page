@@ -10,8 +10,10 @@ mat-drawer-container {
     margin-top: 65px;
     height: 100%;
     min-width: 350px;
+    .mat-drawer-content {
+        position: fixed;
+    }
 }
-  
 
 button {
     width: 340px

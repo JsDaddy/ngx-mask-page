@@ -14,12 +14,14 @@ export const ComDocs: any[] = [
         text: '',
         code: `<input type='text' suffix=" $" mask="0000" >`,
         id: '2',
+        anchor: 'date'
     },
     {
         header: 'Hour',
         text: '',
         code: `<input type='text' [dropSpecialCharacters]="false" mask="000-000.00" >`,
         id: '3',
+        anchor: 'hour'
     },
     {
         header: 'Valid 24 hour format',
