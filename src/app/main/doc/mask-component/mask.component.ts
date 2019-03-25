@@ -50,7 +50,7 @@ export class MaskComponent implements OnInit {
                 // tslint:disable-next-line:no-any
                 const anchor: any = document.getElementById(scrollTo);
                 if (anchor) {
-                    anchor.scrollIntoView({ behavior: 'smooth' });
+                    anchor.scrollIntoView({ behavior: 'smooth', block: 'end' });
                 }
             });
         }

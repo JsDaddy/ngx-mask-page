@@ -7,10 +7,12 @@ export const lists: any[] = [
             {
                 content: 'Date',
                 id: '1',
+                scrollTo: 'prefix'
             },
             {
                 content: 'Date and hour',
                 id: '2',
+                scrollTo: 'date'
             },
             {
                 content: 'Hour',
