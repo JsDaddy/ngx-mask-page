@@ -5,7 +5,7 @@ export const OthDocs: any[] = [
     {
         header: 'Secure input',
         text: 'You can hide symbols in input field and get the actual value in formcontrol',
-        code: ` <input matInput placeholder="Secure input" [hiddenInput]="true" mask="XXX/X0/0000">`,
+        code: ` <input [hiddenInput]="true" mask="XXX/X0/0000">`,
         id: '1'
     },
     {
