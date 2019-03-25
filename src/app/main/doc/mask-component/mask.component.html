@@ -3,7 +3,7 @@
   <mat-drawer-container class="mat-elevation-z6">
     <mat-drawer-content>
       <mat-accordion>
-        <mat-expansion-panel *ngFor="let list of lists">
+        <mat-expansion-panel *ngFor="let list of lists" [expanded]="list.id == 1">
           <mat-expansion-panel-header (click)="switchDoc(list.id)">
             <mat-panel-title [ngStyle]="{'color': list.id === chosenList ? '#ffcc00' : 'black'}">{{list.header}}
             </mat-panel-title>

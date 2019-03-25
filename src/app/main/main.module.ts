@@ -16,14 +16,14 @@ import xml from 'highlight.js/lib/languages/xml';
 
 
 const routes: Routes = [
-  { path: 'main', component: MainPageComponent },
+  { path: 'main', component: MaskComponent },
   { path: 'mask-component', component: MaskComponent },
   { path: 'getting-start', component: GetStartedPageComponent}
 ];
 
 
 // tslint:disable-next-line: no-any
-function hljsLanguages(): any {
+export function hljsLanguages(): any {
   return [
     { name: 'typescript', func: typescript },
     { name: 'xml', func: xml }
