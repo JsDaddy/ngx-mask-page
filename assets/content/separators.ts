@@ -6,13 +6,16 @@ export const SepDocs: any[] = [
         header: 'Thousand separator',
         text: 'You can devide your input by thousands',
         code: `<input type='text' mask="separator">`,
-        id: '1'
+        id: '1',
+        anchor: 'sep'
     },
     {
         header: 'Dot separator',
         text: 'For separate input with dots',
         code: `<input type='text' mask="dot_separator">`,
-        id: '2'
+        id: '2',
+        anchor: 'Dsep'
+
     },
     {
         header: 'Dot separator',
