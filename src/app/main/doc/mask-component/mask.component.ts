@@ -45,16 +45,13 @@ export class MaskComponent implements OnInit {
 
     public handleClick(idItem: string, scrollTo: string): void {
         this.chosenItem = idItem;
-        if (Number(idItem) >= 3) {
-            setTimeout(() => {
-                // tslint:disable-next-line:no-any
+        setTimeout(() => {
+             // tslint:disable-next-line:no-any
                 const anchor: any = document.getElementById(scrollTo);
                 if (anchor) {
                     anchor.scrollIntoView({ behavior: 'smooth', block: 'end' });
                 }
             });
-        }
-
     }
 
     public ngOnInit(): void {
