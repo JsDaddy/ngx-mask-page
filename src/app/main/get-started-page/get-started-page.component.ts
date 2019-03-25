@@ -8,33 +8,33 @@ export interface TableElement {
   mask: string;
   example: string;
 }
-const ELEMENT_DATA: TableElement[] = [
-  {
-    position: 1,
-    mask: '9999-99-99',
-    example: '2017-04-15',
-  },
-  {
-    position: 2,
-    mask: '0*.00',
-    example: '2017.22',
-  },
-  {
-    position: 3,
-    mask: '000.000.000-99',
-    example: '048.457.987-98',
-  },
-  {
-    position: 4,
-    mask: 'AAAA',
-    example: '0F6g',
-  },
-  {
-    position: 5,
-    mask: 'SSSS',
-    example: 'asDF',
-  }
-];
+// const ELEMENT_DATA: TableElement[] = [
+//   {
+//     position: 1,
+//     mask: '9999-99-99',
+//     example: '2017-04-15',
+//   },
+//   {
+//     position: 2,
+//     mask: '0*.00',
+//     example: '2017.22',
+//   },
+//   {
+//     position: 3,
+//     mask: '000.000.000-99',
+//     example: '048.457.987-98',
+//   },
+//   {
+//     position: 4,
+//     mask: 'AAAA',
+//     example: '0F6g',
+//   },
+//   {
+//     position: 5,
+//     mask: 'SSSS',
+//     example: 'asDF',
+//   }
+// ];
 const codePattern: TableElement[] = [
   {
     position: 1,
@@ -67,7 +67,7 @@ const codePattern: TableElement[] = [
 export class GetStartedPageComponent implements OnInit {
 
    public displayedColumns: string[] = ['mask', 'example'];
-   public dataSource: TableElement[] = ELEMENT_DATA;
+  //  public dataSource: TableElement[] = ELEMENT_DATA;
    public dataCode:  TableElement[] = codePattern;
    public displayCol: string [] = ['code' , 'meaning'];
      // tslint:disable-next-line:no-any
@@ -105,7 +105,7 @@ export class GetStartedPageComponent implements OnInit {
         code: `<span>{{phone | mask: '(000) 000-0000'}}</span>`
       },
       {
-        header: 'Examples'
+        header: 'Default patterns'
       },
     ];
 
