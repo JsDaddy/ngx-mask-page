@@ -78,16 +78,18 @@ export const lists: any[] = [
         text: [
             {
                 content: 'Separator',
-                id: '1'
+                id: '1',
+                scrollTo: 'sep'
             },
             {
                 content: 'Dot separator',
-                id: '2'
+                id: '2',
+                scrollTo: 'Dsep'
             },
             {
                 content: 'Comma separator',
                 id: '3',
-                scrollTo: 'comma_sep'
+                scrollTo: 'comma_sep',
             }
         ],
     },
