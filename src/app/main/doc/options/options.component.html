@@ -25,9 +25,9 @@
               <mat-form-field>
                 <input matInput placeholder="{{ex._placeholder}}" prefix="{{ex._prefix}}" sufix="{{ex._suffix}}"
                   [dropSpecialCharacters]="ex._dropSpecialCharacters || ''" mask="{{ex._mask || ''}}"
-                  [formControl]="ex.control.form" [(ngModel)]="ex.control.model" [validation]="ex._validation || ''"
-                  [showMaskTyped]="ex._showMaskTyped || ''" [clearIfNotMatch]="ex._clearIfNotMatch || ''"
-                  [hiddenInput]="ex._hiddenInput || ''" [specialCharacters]="ex._specialCharacters || ''"
+                  [formControl]="ex.control.form" [(ngModel)]="ex.control.model" [validation]="ex._validation || null"
+                  [showMaskTyped]="ex._showMaskTyped || null" [clearIfNotMatch]="ex._clearIfNotMatch || null"
+                  [hiddenInput]="ex._hiddenInput || null"
                   >
               </mat-form-field>
             </div>
