@@ -23,7 +23,7 @@
           <mat-card-content *ngIf="!ex._pipe; else pipeView">
             <div class="input-wrap">
               <mat-form-field>
-                <input matInput placeholder="{{ex._placeholder}}" prefix="{{ex._prefix}}" sufix="{{ex._suffix}}"
+                <input matInput placeholder="{{ex._placeholder}}" prefix="{{ex._prefix}}" suffix="{{ex._suffix}}"
                   [dropSpecialCharacters]="ex._dropSpecialCharacters || ''" mask="{{ex._mask || ''}}"
                   [formControl]="ex.control.form" [(ngModel)]="ex.control.model" [validation]="ex._validation || null"
                   [showMaskTyped]="ex._showMaskTyped || null" [clearIfNotMatch]="ex._clearIfNotMatch || null"
