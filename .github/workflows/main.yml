@@ -23,6 +23,7 @@ jobs:
     - name: build, deploy
       run: |
         npm install
+        npm install -g angular-cli-ghpages
         npm run deploy
       env:
         CI: true
