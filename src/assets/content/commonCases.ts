@@ -5,42 +5,42 @@ export const ComDocs: any[] = [
     {
         header: 'Date',
         text: '',
-        code: `<input mask="00/00/0000">`,
+        code: `<input matInput mask="00/00/0000"/>`,
         id: '1',
         anchor: 'prefix'
     },
     {
         header: 'Date and hour',
         text: '',
-        code: `<input mask="00/00/00 00:00:00">`,
+        code: `<input matInput mask="00/00/00 00:00:00" />`,
         id: '2',
         anchor: 'date'
     },
     {
         header: 'Hour',
         text: '',
-        code: `<input mask="00:00:00">`,
+        code: `<input matInput mask="00:00:00" />`,
         id: '3',
         anchor: 'hour'
     },
     {
         header: 'Valid 24 hour format',
         text: '',
-        code: `<input mask="Hh:m0:s0">`,
+        code: `<input matInput mask="Hh:m0:s0" />`,
         id: '4',
         anchor: 'valid24'
     },
     {
         header: 'Mixed types',
         text: '',
-        code: `<input mask="AAA 000-S0S">`,
+        code: `<input matInput mask="AAA 000-S0S" />`,
         id: '5',
         anchor: 'mixed'
     },
     {
         header: 'Valid date and month',
         text: '',
-        code: `<input mask="d0/M0/0000">`,
+        code: `<input matInput mask="d0/M0/0000" />`,
         id: '6',
         anchor: 'validdate'
     }

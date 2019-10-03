@@ -27,8 +27,8 @@
                   [dropSpecialCharacters]="ex._dropSpecialCharacters || ''" mask="{{ex._mask || ''}}"
                   [formControl]="ex.control.form" [(ngModel)]="ex.control.model" [validation]="ex._validation || null"
                   [showMaskTyped]="ex._showMaskTyped || null" [clearIfNotMatch]="ex._clearIfNotMatch || null"
-                  [hiddenInput]="ex._hiddenInput || null"
-                  >
+                  [hiddenInput]="ex._hiddenInput"
+                  />
               </mat-form-field>
             </div>
             <div *ngIf="!ex._validation; else validView">
