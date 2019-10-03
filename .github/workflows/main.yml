@@ -20,10 +20,15 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: build, deploy
+    - name: build
       run: |
         npm install
-        npm install -g angular-cli-ghpages
-        npm run deploy
+        npm run build
       env:
         CI: true
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2.4.0
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./dist/ngx-mask-page
