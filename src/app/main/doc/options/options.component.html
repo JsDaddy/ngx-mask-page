@@ -23,12 +23,21 @@
           <mat-card-content *ngIf="!ex._pipe; else pipeView">
             <div class="input-wrap">
               <mat-form-field>
+<<<<<<< HEAD
                 <input matInput placeholder="{{ex._placeholder}}" prefix="{{ex._prefix}}" suffix="{{ex._suffix}}"
                   [dropSpecialCharacters]="ex._dropSpecialCharacters || ''" mask="{{ex._mask || ''}}"
                   [formControl]="ex.control.form" [(ngModel)]="ex.control.model" [validation]="ex._validation || null"
                   [showMaskTyped]="ex._showMaskTyped || null" [clearIfNotMatch]="ex._clearIfNotMatch || null"
                   [hiddenInput]="ex._hiddenInput"
                   />
+=======
+                <input matInput placeholder="{{ex._placeholder}}" prefix="{{ex._prefix}}" sufix="{{ex._suffix}}"
+                  [dropSpecialCharacters]="ex._dropSpecialCharacters || ''" mask="{{ex._mask || ''}}"
+                  [formControl]="ex.control.form" [(ngModel)]="ex.control.model" [validation]="ex._validation || ''"
+                  [showMaskTyped]="ex._showMaskTyped || ''" [clearIfNotMatch]="ex._clearIfNotMatch || ''"
+                  [hiddenInput]="ex._hiddenInput || ''" [specialCharacters]="ex._specialCharacters || ''"
+                  >
+>>>>>>> 65271e836fd930abcbe322f6a1b6ae1222007179
               </mat-form-field>
             </div>
             <div *ngIf="!ex._validation; else validView">
@@ -61,4 +70,8 @@
     <p>Mask: (000) 000-0000</p>
     <p>Value: 123456789</p>
   </mat-card-content>
+<<<<<<< HEAD
 </ng-template>
+=======
+</ng-template>
+>>>>>>> 65271e836fd930abcbe322f6a1b6ae1222007179
