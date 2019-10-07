@@ -25,7 +25,7 @@
     "core-js": "^3.2.1",
     "highlight.js": "^9.15.10",
     "ngx-highlightjs": "^3.0.3",
-    "ngx-mask": "^8.0.8",
+    "ngx-mask": "^8.0.9",
     "rxjs": "~6.5.3",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
