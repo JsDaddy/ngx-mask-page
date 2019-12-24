@@ -12,7 +12,7 @@ export const SepDocs: any[] = [
     {
         header: 'Dot separator',
         text: 'For separate input with dots',
-        code: `<input type='text' mask="dot_separator">`,
+        code: `<input type='text' mask="separator" thousandSeparator="."/>`,
         id: '2',
         anchor: 'Dsep'
 
@@ -20,32 +20,32 @@ export const SepDocs: any[] = [
     {
         header: 'Dot separator',
         text: `For limiting decimal precision add ',' and the precision you want to limit too on the input. 2 is useful for currency. 0 will prevent decimals completely.`,
-        code: `<input type='text' mask="dot_separator.2">`,
+        code: `<input type='text' mask="separator.2" thousandSeparator="."/>`,
         id: '2'
     },
     {
         header: 'Dot separator',
         text: 'without decimal part',
-        code: `<input type='text' mask="dot_separator.0">`,
+        code: `<input type='text' mask="separator.0" thousandSeparator="."/>`,
         id: '2'
     },
     {
         header: 'Comma separator',
         text: `For separate input with commas`,
-        code: `  <input type='text' mask="comma_separator">`,
+        code: `<input type='text' mask="separator" thousandSeparator=","/>`,
         id: '3',
         anchor: 'comma_sep'
     },
     {
         header: 'Comma separator',
         text: `For limiting decimal precision add '.' and the precision you want to limit too on the input. 2 is useful for currency. 0 will prevent decimals completely.`,
-        code: `  <input type='text' mask="comma_separator.2">`,
+        code: `<input type='text' mask="separator.2" thousandSeparator=","/>`,
         id: '3'
     },
     {
         header: 'Comma separator',
         text: 'without decimal part',
-        code: `<input type='text' mask="comma_separator.0">`,
+        code: `<input type='text' mask="separator.0" thousandSeparator=","/>`,
         id: '3'
     },
 ];
@@ -59,34 +59,40 @@ export const SepExamples: any[] = [
         control: { form: new FormControl(''), model: '' }
     },
     {
-        _placeholder: 'dot_separator',
-        _mask: 'dot_separator',
+        _placeholder: 'separator',
+        _mask: 'separator',
+        _thousandSeparator: '.',
         control: { form: new FormControl(''), model: '' }
     },
     {
-        _placeholder: 'dot_separator.2',
-        _mask: 'dot_separator.2',
+        _placeholder: 'separator.2',
+        _mask: 'separator.2',
+        _thousandSeparator: '.',
         control: { form: new FormControl(''), model: '' }
     },
     {
-        _placeholder: 'dot_separator.0',
-        _mask: 'dot_separator.2',
+        _placeholder: 'separator.0',
+        _mask: 'separator.0',
+        _thousandSeparator: '.',
         control: { form: new FormControl(''), model: '' }
     },
     {
-        _placeholder: 'comma_separator',
-        _mask: 'comma_separator',
+        _placeholder: 'separator',
+        _mask: 'separator',
+        _thousandSeparator: ',',
         control: { form: new FormControl(''), model: '' }
     },
     {
-        _placeholder: 'comma_separator.2',
+        _placeholder: 'separator.2',
         _clearIfNotMatch: true,
-        _mask: 'comma_separator.2',
+        _mask: 'separator.2',
+        _thousandSeparator: ',',
         control: { form: new FormControl(''), model: '' }
     },
     {
-        _placeholder: 'comma_separator.0',
-        _mask: 'comma_separator.0',
+        _placeholder: 'separator.0',
+        _mask: 'separator.0',
+        _thousandSeparator: ',',
         control: { form: new FormControl(''), model: '' }
     },
 ];

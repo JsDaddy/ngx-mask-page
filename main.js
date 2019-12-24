@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<section class=\"content\">\n\n  <div class=\"doc-container\">\n    <div class=\"doc\" *ngFor=\"let tile of docs\">\n      <mat-card id=\"{{tile.anchor}}\">\n        <mat-card-header>\n          <mat-card-title [ngStyle]=\"{'color': checkChoose(choose, tile.id) ? '#ffcc00' : 'black' }\">{{tile.header}}\n          </mat-card-title>\n        </mat-card-header>\n          <mat-card-content>\n            <p>{{tile.text}}</p>\n            <p>Usage</p>\n            <pre><code [highlight]=\"tile.code\"></code></pre>\n          </mat-card-content>\n      </mat-card>\n    </div>\n  </div>\n\n  <div class=\"examples-container\">\n    <div class=\"examples-wrapper\">\n      <div class=\"example\" *ngFor=\"let ex of examples\">\n        <mat-card>\n          <mat-card-content *ngIf=\"!ex._pipe; else pipeView\">\n            <div class=\"input-wrap\">\n              <mat-form-field>\n                <input matInput placeholder=\"{{ex._placeholder}}\" prefix=\"{{ex._prefix}}\" suffix=\"{{ex._suffix}}\"\n                  [dropSpecialCharacters]=\"ex._dropSpecialCharacters || ''\" mask=\"{{ex._mask || ''}}\"\n                  [formControl]=\"ex.control.form\" [(ngModel)]=\"ex.control.model\" [validation]=\"ex._validation || null\"\n                  [showMaskTyped]=\"ex._showMaskTyped || null\" [clearIfNotMatch]=\"ex._clearIfNotMatch || null\"\n                  [hiddenInput]=\"ex._hiddenInput\"\n                  />\n              </mat-form-field>\n            </div>\n            <div *ngIf=\"!ex._validation; else validView\">\n              <div class=\"model-wrap\">\n                <div class=\"values\">\n                  <p>FormControl: {{ ex.control.form.value ? ex.control.form.value : 'Empty' }}</p>\n                  <p>NgModel: {{ ex.control.model ? ex.control.model: 'Empty' }}</p>\n                </div>\n                <mat-hint>Mask: {{ex._mask}}</mat-hint>\n              </div>\n            </div>\n            <ng-template #validView>\n              <div class=\"model-wrap\">\n                <div class=\"values\">\n                  <p>FormControl: {{ ex.control.form.errors | json }}</p>\n                </div>\n                <mat-hint>Mask: {{ex._mask}}</mat-hint>\n              </div>\n            </ng-template>\n          </mat-card-content>\n        </mat-card>\n      </div>\n    </div>\n  </div>\n</section>\n\n<ng-template #pipeView>\n  <mat-card-content>\n    <p>{{phone | mask: '(000) 000-0000' }}</p>\n    <p>Mask: (000) 000-0000</p>\n    <p>Value: 123456789</p>\n  </mat-card-content>\n</ng-template>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<section class=\"content\">\n  <div class=\"doc-container\">\n    <div class=\"doc\" *ngFor=\"let tile of docs\">\n      <mat-card id=\"{{ tile.anchor }}\">\n        <mat-card-header>\n          <mat-card-title\n            [ngStyle]=\"{\n              color: checkChoose(choose, tile.id) ? '#ffcc00' : 'black'\n            }\"\n            >{{ tile.header }}\n          </mat-card-title>\n        </mat-card-header>\n        <mat-card-content>\n          <p>{{ tile.text }}</p>\n          <p>Usage</p>\n          <pre><code [highlight]=\"tile.code\"></code></pre>\n        </mat-card-content>\n      </mat-card>\n    </div>\n  </div>\n\n  <div class=\"examples-container\">\n    <div class=\"examples-wrapper\">\n      <div class=\"example\" *ngFor=\"let ex of examples\">\n        <mat-card>\n          <mat-card-content *ngIf=\"!ex._pipe; else pipeView\">\n            <div class=\"input-wrap\">\n              <mat-form-field>\n                <input\n                  matInput\n                  placeholder=\"{{ ex._placeholder }}\"\n                  prefix=\"{{ ex._prefix }}\"\n                  suffix=\"{{ ex._suffix }}\"\n                  [dropSpecialCharacters]=\"ex._dropSpecialCharacters || ''\"\n                  mask=\"{{ ex._mask || '' }}\"\n                  thousandSeparator=\"{{ex._thousandSeparator||' '}}\"\n                  [formControl]=\"ex.control.form\"\n                  [(ngModel)]=\"ex.control.model\"\n                  [validation]=\"ex._validation || null\"\n                  [showMaskTyped]=\"ex._showMaskTyped || null\"\n                  [clearIfNotMatch]=\"ex._clearIfNotMatch || null\"\n                  [hiddenInput]=\"ex._hiddenInput\"\n                />\n              </mat-form-field>\n            </div>\n            <div *ngIf=\"!ex._validation; else validView\">\n              <div class=\"model-wrap\">\n                <div class=\"values\">\n                  <p>\n                    FormControl:\n                    {{\n                      ex.control.form.value ? ex.control.form.value : \"Empty\"\n                    }}\n                  </p>\n                  <p>\n                    NgModel: {{ ex.control.model ? ex.control.model : \"Empty\" }}\n                  </p>\n                </div>\n                <mat-hint>Mask: {{ ex._mask }}</mat-hint>\n              </div>\n            </div>\n            <ng-template #validView>\n              <div class=\"model-wrap\">\n                <div class=\"values\">\n                  <p>FormControl: {{ ex.control.form.errors | json }}</p>\n                </div>\n                <mat-hint>Mask: {{ ex._mask }}</mat-hint>\n              </div>\n            </ng-template>\n          </mat-card-content>\n        </mat-card>\n      </div>\n    </div>\n  </div>\n</section>\n\n<ng-template #pipeView>\n  <mat-card-content>\n    <p>{{ phone | mask: \"(000) 000-0000\" }}</p>\n    <p>Mask: (000) 000-0000</p>\n    <p>Value: 123456789</p>\n  </mat-card-content>\n</ng-template>\n");
 
 /***/ }),
 
@@ -1430,39 +1430,39 @@ var SepDocs = [
     {
         header: 'Dot separator',
         text: 'For separate input with dots',
-        code: "<input type='text' mask=\"dot_separator\">",
+        code: "<input type='text' mask=\"separator\" thousandSeparator=\".\"/>",
         id: '2',
         anchor: 'Dsep'
     },
     {
         header: 'Dot separator',
         text: "For limiting decimal precision add ',' and the precision you want to limit too on the input. 2 is useful for currency. 0 will prevent decimals completely.",
-        code: "<input type='text' mask=\"dot_separator.2\">",
+        code: "<input type='text' mask=\"separator.2\" thousandSeparator=\".\"/>",
         id: '2'
     },
     {
         header: 'Dot separator',
         text: 'without decimal part',
-        code: "<input type='text' mask=\"dot_separator.0\">",
+        code: "<input type='text' mask=\"separator.0\" thousandSeparator=\".\"/>",
         id: '2'
     },
     {
         header: 'Comma separator',
         text: "For separate input with commas",
-        code: "  <input type='text' mask=\"comma_separator\">",
+        code: "<input type='text' mask=\"separator\" thousandSeparator=\",\"/>",
         id: '3',
         anchor: 'comma_sep'
     },
     {
         header: 'Comma separator',
         text: "For limiting decimal precision add '.' and the precision you want to limit too on the input. 2 is useful for currency. 0 will prevent decimals completely.",
-        code: "  <input type='text' mask=\"comma_separator.2\">",
+        code: "<input type='text' mask=\"separator.2\" thousandSeparator=\",\"/>",
         id: '3'
     },
     {
         header: 'Comma separator',
         text: 'without decimal part',
-        code: "<input type='text' mask=\"comma_separator.0\">",
+        code: "<input type='text' mask=\"separator.0\" thousandSeparator=\",\"/>",
         id: '3'
     },
 ];
@@ -1474,34 +1474,40 @@ var SepExamples = [
         control: { form: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''), model: '' }
     },
     {
-        _placeholder: 'dot_separator',
-        _mask: 'dot_separator',
+        _placeholder: 'separator',
+        _mask: 'separator',
+        _thousandSeparator: '.',
         control: { form: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''), model: '' }
     },
     {
-        _placeholder: 'dot_separator.2',
-        _mask: 'dot_separator.2',
+        _placeholder: 'separator.2',
+        _mask: 'separator.2',
+        _thousandSeparator: '.',
         control: { form: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''), model: '' }
     },
     {
-        _placeholder: 'dot_separator.0',
-        _mask: 'dot_separator.2',
+        _placeholder: 'separator.0',
+        _mask: 'separator.0',
+        _thousandSeparator: '.',
         control: { form: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''), model: '' }
     },
     {
-        _placeholder: 'comma_separator',
-        _mask: 'comma_separator',
+        _placeholder: 'separator',
+        _mask: 'separator',
+        _thousandSeparator: ',',
         control: { form: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''), model: '' }
     },
     {
-        _placeholder: 'comma_separator.2',
+        _placeholder: 'separator.2',
         _clearIfNotMatch: true,
-        _mask: 'comma_separator.2',
+        _mask: 'separator.2',
+        _thousandSeparator: ',',
         control: { form: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''), model: '' }
     },
     {
-        _placeholder: 'comma_separator.0',
-        _mask: 'comma_separator.0',
+        _placeholder: 'separator.0',
+        _mask: 'separator.0',
+        _thousandSeparator: ',',
         control: { form: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''), model: '' }
     },
 ];
