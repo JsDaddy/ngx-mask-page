@@ -14,8 +14,8 @@ export class MaskComponent implements OnInit {
 
     // tslint:disable-next-line: no-any
     public inputVal: any;
-    public chosenItem: string ;
-    public chosenList: string;
+    public chosenItem!: string ;
+    public chosenList!: string;
     // tslint:disable-next-line: no-any
     public lists: any;
 
